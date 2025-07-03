@@ -2,12 +2,11 @@
 
 
 function App() {
-  
-
   return (
-    <>
-      <h1>My fintness project</h1>
-    </>
+    <div className="flex">
+      <h1 className="text-9xl">My fitness project</h1>
+      <p className="font-montserrat">Привет</p>
+    </div>
   )
 }
 
