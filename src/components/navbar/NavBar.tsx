@@ -1,7 +1,18 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Logo from '@/assets/images/Logo.png';
+import ActionButton from '@/utils/ActionButton';
+import CustomLink from '../Link';
+import { type SectionId, navLinks } from '@/types/type';
 
 const NavBar = () => {
+ const [activeSection, setActiveSection] = useState<SectionId | null>(
+  navLinks[0]?.id || null
+ );
+
+const handleSetActive = (sectionId:SectionId) => {
+  setActiveSection(sectionId)
+}
+
  return (
   <nav className='relative h-[88px]'>
    <div className='fixed top-0 z-30 w-full'>
@@ -9,12 +20,26 @@ const NavBar = () => {
      <div className='flex-between gap-20 w-full'>
       <img src={Logo} alt='Logo' />
       <div className='flex-between w-full'>
-       <div className='flex-between gap-8 text-sm'>menu</div>
+       <div className='flex-between gap-8 text-sm'>
+        {navLinks.map((link) => (
+        <CustomLink
+          key={link.id}
+          section={link.id}
+          onClick={handleSetActive}
+          activeSection={activeSection}
+        >
+          {link.label}
+        </CustomLink>
+      ))}
+       </div>
        <div className='flex-between gap-8'>
         <button className='rounded-md bg-rose-400 px-10 py-2 cursor-pointer hover:bg-rose-500 hover:text-white animate'>
          Sign in
         </button>
-         <a href='' className=''>Become a Member</a>
+        <ActionButton to='contactus' variant='link'>
+         {' '}
+         Become a member
+        </ActionButton>
        </div>
       </div>
      </div>
