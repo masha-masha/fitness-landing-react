@@ -1,11 +1,9 @@
-
-
+import NavBar from "./components/navbar/NavBar"
 
 function App() {
   return (
-    <div className="flex">
-      <h1 className="text-9xl">My fitness project</h1>
-      <p className="font-montserrat">Привет</p>
+    <div className="app text-black bg-gray-50">
+     <NavBar />
     </div>
   )
 }

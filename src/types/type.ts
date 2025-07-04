@@ -1,0 +1,1 @@
+export type SectionId = "home" | "benefits" | "ourclasses" | "contactus";
