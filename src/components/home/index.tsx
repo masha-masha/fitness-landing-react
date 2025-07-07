@@ -1,9 +1,9 @@
-import ActionButton from "@/utils/ActionButton";
+// import ActionButton from "@/utils/ActionButton";
 import HomePageText from "@/assets/images/HomePageText.png";
-import HomePageGraphic from "@/assets/images/HomePageText.png";
-import { Link } from "react-scroll";
+// import HomePageGraphic from "@/assets/images/HomePageText.png";
+// import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { sponsorImages } from "@/utils/sponsorimages";
+// import { sponsorImages } from "@/utils/sponsorimages";
 
 const Home = () => {
     return (
